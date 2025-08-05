@@ -42,7 +42,7 @@ Toute tentative de reproduire ces techniques sur des systèmes que vous ne poss�
 ##  Contact
 
 Besoin d’un script, d’un audit ou juste d’un bon CTF ?  
-Contacte-moi via la section [Issues](https://github.com/Bruno-Delourme/PORTFOLIO_CYBER/issues), ou droppe un payload dans mon formulaire de contact.
+Contacte-moi par mail delourmebruno@gmail.com, ou droppe un payload dans mon formulaire de contact.
 
 ---
 

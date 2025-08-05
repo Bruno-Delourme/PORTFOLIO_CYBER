@@ -1,6 +1,87 @@
+/* Import des polices personnalisées D-DIN */
+@font-face {
+  font-family: 'D-DIN';
+  src: url('../public/Fonts/D-DIN.eot');
+  src: url('../public/Fonts/D-DIN.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DIN.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN';
+  src: url('../public/Fonts/D-DIN-Bold.eot');
+  src: url('../public/Fonts/D-DIN-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DIN-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN';
+  src: url('../public/Fonts/D-DIN-Italic.eot');
+  src: url('../public/Fonts/D-DIN-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DIN-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN Condensed';
+  src: url('../public/Fonts/D-DINCondensed.eot');
+  src: url('../public/Fonts/D-DINCondensed.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DINCondensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN Condensed';
+  src: url('../public/Fonts/D-DINCondensed-Bold.eot');
+  src: url('../public/Fonts/D-DINCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DINCondensed-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN Expanded';
+  src: url('../public/Fonts/D-DINExp.eot');
+  src: url('../public/Fonts/D-DINExp.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DINExp.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN Expanded';
+  src: url('../public/Fonts/D-DINExp-Bold.eot');
+  src: url('../public/Fonts/D-DINExp-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DINExp-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'D-DIN Expanded';
+  src: url('../public/Fonts/D-DINExp-Italic.eot');
+  src: url('../public/Fonts/D-DINExp-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../public/Fonts/D-DINExp-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'D-DIN', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +91,27 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #282768 0%, #513d7f 97%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #1f1f4f 0%, #3d2e5f 97%);
 }

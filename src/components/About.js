@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, GraduationCap, Briefcase, Award } from 'lucide-react';
+import { GraduationCap, Briefcase, Award } from 'lucide-react';
 
 const About = () => {
   return (

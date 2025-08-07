@@ -86,6 +86,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #000000;
+  color: #ffffff;
 }
 
 code {
@@ -104,7 +106,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -1,8 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import { Hand, Download, Eye } from 'lucide-react';
 
 const Hero = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, threshold: 0.2 });
+
   const handleDownloadCV = () => {
     const link = document.createElement('a');
     link.href = '/CV_BRUNO DELOURME_ALT_CYB_25.pdf';
@@ -12,15 +16,22 @@ const Hero = () => {
     document.body.removeChild(link);
   };
 
+  const scrollToProjects = () => {
+    const element = document.getElementById('projets');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" ref={ref}>
       <div className="container">
         <div className="hero-content">
           {/* Left Column - Text Content */}
           <motion.div 
             className="hero-text"
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
             <div className="greeting">
@@ -40,7 +51,7 @@ const Hero = () => {
             </p>
             
             <div className="hero-buttons">
-              <button className="btn btn-outline">
+              <button className="btn btn-outline" onClick={scrollToProjects}>
                 <Eye className="btn-icon" />
                 Voir mon travail
               </button>
@@ -55,16 +66,10 @@ const Hero = () => {
           <motion.div 
             className="hero-illustration"
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="illustration-container">
-              {/* Main Figure */}
-              <div className="main-figure">
-                <div className="figure-hoodie"></div>
-                <div className="figure-laptop"></div>
-              </div>
-              
               {/* Surrounding Icons */}
               <div className="icon linux-icon"></div>
               <div className="icon dragon-icon"></div>

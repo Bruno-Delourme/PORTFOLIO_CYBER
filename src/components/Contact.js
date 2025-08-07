@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,13 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  useEffect(() => {
+    // Initialiser EmailJS avec votre clé publique
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "Blpnqts1dYxs1S2ll");
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,8 +27,36 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Ici vous pouvez ajouter la logique d'envoi du formulaire
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Paramètres pour EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      to_email: 'delourmebruno@gmail.com'
+    };
+
+    // Envoyer l'email via EmailJS
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_xc5soxv',
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_ev95776',
+      templateParams
+    )
+    .then((response) => {
+      console.log('Email envoyé avec succès:', response);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    })
+    .catch((error) => {
+      console.error('Erreur lors de l\'envoi:', error);
+      setSubmitStatus('error');
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
   };
 
   const contactInfo = [
@@ -28,19 +64,19 @@ const Contact = () => {
       icon: <Mail />,
       label: "Email",
       value: "delourmebruno@gmail.com",
-      link: "https://www.linkedin.com/in/bruno-delourme-52394a164/"
+      link: null
     },
     {
       icon: <Phone />,
       label: "Téléphone",
       value: "+33 6 XX XX XX XX",
-      link: "tel:+336XXXXXXXX"
+      link: null
     },
     {
       icon: <MapPin />,
       label: "Localisation",
       value: "France",
-      link: "#"
+      link: null
     }
   ];
 
@@ -100,9 +136,9 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <span className="contact-label">{info.label}</span>
-                    <a href={info.link} className="contact-value">
+                    <span className="contact-value">
                       {info.value}
-                    </a>
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -139,6 +175,18 @@ const Contact = () => {
           >
             <h3>Envoyez-moi un message</h3>
             
+            {/* Messages de statut */}
+            {submitStatus === 'success' && (
+              <div className="form-status success">
+                Message envoyé avec succès ! Je vous répondrai bientôt.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="form-status error">
+                Erreur lors de l'envoi. Veuillez réessayer.
+              </div>
+            )}
+            
             <div className="form-group">
               <input
                 type="text"
@@ -147,6 +195,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -158,6 +207,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -169,6 +219,7 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -180,12 +231,17 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
+                disabled={isSubmitting}
               ></textarea>
             </div>
             
-            <button type="submit" className="btn btn-primary">
+            <button 
+              type="submit" 
+              className="btn btn-primary"
+              disabled={isSubmitting}
+            >
               <Send size={16} />
-              Envoyer le message
+              {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
             </button>
           </motion.form>
         </div>

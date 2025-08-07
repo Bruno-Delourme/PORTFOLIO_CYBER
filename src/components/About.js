@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Briefcase, Award } from 'lucide-react';
+import { User, GraduationCap, Briefcase, Award } from 'lucide-react';
 
 const About = () => {
   return (
@@ -8,9 +8,9 @@ const About = () => {
       <div className="container">
         <motion.div
           className="about-header"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="section-title">À propos</h2>
           <p className="section-description">
@@ -21,9 +21,9 @@ const About = () => {
         <div className="about-content">
           <motion.div
             className="about-text"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           >
             <h3>Qui suis-je ?</h3>
             <p>
@@ -42,9 +42,9 @@ const About = () => {
 
           <motion.div
             className="about-timeline"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           >
             <div className="timeline-item">
               <div className="timeline-icon">

@@ -15,7 +15,12 @@ const Contact = () => {
 
   useEffect(() => {
     // Initialiser EmailJS avec votre clé publique
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "Blpnqts1dYxs1S2ll");
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    if (!publicKey) {
+      console.error('EmailJS public key not configured');
+      return;
+    }
+    emailjs.init(publicKey);
   }, []);
 
   const handleChange = (e) => {
@@ -40,11 +45,17 @@ const Contact = () => {
     };
 
     // Envoyer l'email via EmailJS
-    emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_xc5soxv',
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_ev95776',
-      templateParams
-    )
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    
+    if (!serviceId || !templateId) {
+      console.error('EmailJS configuration incomplete');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+    
+    emailjs.send(serviceId, templateId, templateParams)
     .then((response) => {
       console.log('Email envoyé avec succès:', response);
       setSubmitStatus('success');

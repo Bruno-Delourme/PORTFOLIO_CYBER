@@ -9,8 +9,8 @@ const Hero = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/CV_Bruno_Delourme_Cyber_QRCODE.pdf';
-    link.download = 'CV_Bruno_Delourme_Cyber_QRCODE.pdf';
+    link.href = '/CV_BRUNO_DELOURME_CYBER_QC_2025.pdf';
+    link.download = 'CV_BRUNO_DELOURME_CYBER_QC_2025.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

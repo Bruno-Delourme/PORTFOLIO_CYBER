@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Hand, Download, Eye, Mail } from 'lucide-react';
+import { Hand, Download, Eye } from 'lucide-react';
 
 const Hero = () => {
   const ref = useRef(null);
@@ -18,13 +18,6 @@ const Hero = () => {
 
   const scrollToProjects = () => {
     const element = document.getElementById('projets');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -62,20 +55,6 @@ const Hero = () => {
                 <Eye className="btn-icon" />
                 Voir mon travail
               </button>
-              {/* 
-                🚨 Emergency Contact
-                En cas d'urgence (offre d'emploi), 
-                utilisez ce bouton immédiatement !
-              */}
-              <button className="btn btn-outline" onClick={scrollToContact}>
-                <Mail className="btn-icon" />
-                Embauche/Contact
-              </button>
-              {/* 
-                📄 Document Classified
-                Mon CV contient des informations sensibles.
-                Niveau de classification : "Recruteur Only"
-              */}
               <button className="btn btn-primary" onClick={handleDownloadCV}>
                 <Download className="btn-icon" />
                 Afficher mon CV

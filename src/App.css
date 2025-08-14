@@ -195,7 +195,7 @@ html {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-family: 'D-DIN', sans-serif;
 }
 
@@ -347,7 +347,7 @@ html {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -356,8 +356,8 @@ html {
 }
 
 .hero-description {
-  font-size: 1.1rem;
-  color: #cccccc;
+  font-size: 1.3rem;
+  color: #ffffff;
   margin-bottom: 2rem;
   line-height: 1.7;
 }
@@ -537,7 +537,7 @@ html {
 
 .stat-description {
   color: #cccccc;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 /* Skills Section */
@@ -600,7 +600,7 @@ html {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
@@ -610,8 +610,8 @@ html {
 
 .section-description {
   text-align: center;
-  color: #cccccc;
-  font-size: 1.1rem;
+  color: #ffffff;
+  font-size: 1.3rem;
   max-width: 600px;
   margin: 0 auto 3rem;
 }
@@ -638,7 +638,7 @@ html {
 }
 
 .category-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 1rem;
@@ -655,7 +655,7 @@ html {
   color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 500;
   transition: all 0.3s ease;
 }
@@ -680,14 +680,14 @@ html {
 }
 
 .about-text h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .about-text p {
-  color: #cccccc;
+  color: white;
   margin-bottom: 2rem;
   line-height: 1.7;
 }
@@ -718,17 +718,17 @@ html {
 }
 
 .timeline-content p {
-  color: #cccccc;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .timeline-date {
-  font-size: 0.9rem;
-  background: linear-gradient(90deg, #282768 0%, #513d7f 97%);
+  font-size: 1.1rem;
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Projects Section */
@@ -773,7 +773,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -786,7 +786,7 @@ html {
 }
 
 .project-description {
-  color: #cccccc;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
@@ -803,7 +803,7 @@ html {
   color: #ffffff;
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   transition: all 0.3s ease;
 }
@@ -824,7 +824,7 @@ html {
   gap: 0.5rem;
   color: #6366f1;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 500;
   transition: color 0.3s ease;
   background: none;
@@ -834,7 +834,7 @@ html {
 }
 
 .project-link:hover {
-  background: linear-gradient(90deg, #282768 0%, #513d7f 97%);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -888,7 +888,7 @@ html {
 }
 
 .contact-label {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #cccccc;
   margin-bottom: 0.25rem;
 }
@@ -993,7 +993,7 @@ html {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .about-content {
@@ -1024,7 +1024,7 @@ html {
 
   .btn {
     padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
+    font-size: 1.05rem;
   }
 
   /* Améliorations mobile pour le hero */
@@ -1047,12 +1047,12 @@ html {
   }
 
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.3;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1071,11 +1071,11 @@ html {
   }
 
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .stats-grid {
